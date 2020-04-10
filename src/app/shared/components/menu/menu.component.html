@@ -1,10 +1,7 @@
 <div [ngClass]="{'background': isOpen}">
   <div class="menu" [@menuOpen]="isOpen ? 'open' : 'close'">
     <div class="menu-bar">
-      <aix-icon-button
-        [icons]="isOpen ? 'close' : 'menu'"
-        (click)=click()
-      ></aix-icon-button>
+      <button>{{isOpen ? 'close' : 'menu'}}</button>
     </div>
     <ul class="site-list" *ngIf="isOpen" >
       <li *ngFor="let row of contents"><i>{{row.domain}}</i>
