@@ -1,0 +1,42 @@
+:host {
+  display: inline-block;
+  position: fixed;
+  z-index: 2147483647;
+}
+
+.menu-bar {
+  display: inline-block;
+  background-color: #2f3163;
+  min-height: 100vh;
+  width: 3rem;
+  padding-top: 1rem;
+  overflow-x: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.menu {
+  background-color: #2f3163;
+  color: #fff;
+  z-index: 2147483647;
+}
+
+.background {
+  background-color: rgb(171, 171, 171, 60%);
+  width: 1000rem;
+}
+
+.site-list {
+  display: inline-block;
+  position: fixed;
+  padding-top: 1rem;
+}
+
+.site {
+  padding-left: 1rem;
+}
+
+i {
+  display: block;
+  padding-top: 4px;
+}

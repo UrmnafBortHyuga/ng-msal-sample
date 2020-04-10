@@ -1,0 +1,72 @@
+# This references the default nodejs container from
+# the Docker Hub: https://registry.hub.docker.com/_/node/
+# If you want Nodesource's container you would reference nodesource/node
+# Read more about containers on our dev center
+# http://devcenter.wercker.com/docs/containers/index.html
+box: node
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
+
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+# services:
+# - postgres
+# http://devcenter.wercker.com/docs/services/postgresql.html
+
+# - mongo
+# http://devcenter.wercker.com/docs/services/mongodb.html
+build:
+  # The steps that will be executed on build
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - script:
+        name: npm install
+        code: |
+          npm i
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+    - wacul/store-link:
+        type: store
+        prefix: node_modules/.bin
+lint:
+  steps:
+    - wacul/store-link:
+        type: restore
+        prefix: node_modules/.bin
+    - script:
+        name: ts lint
+        code: |
+          npm run lint
+    # - script:
+    #     name: sass lint
+    #     code: |
+    #       npm run lint:sass
+deploy:
+  steps:
+    - wacul/store-link:
+        type: restore
+        prefix: node_modules/.bin
+    - script:
+        name: build prod mode
+        code: |
+          git config --global user.email "${USER_EMAIL}"
+          git config --global user.name "${USER_NANE}"
+          git checkout -b release
+          sh ./project.build.sh
+          npm run build:prod
+          ls -a | grep -v -E 'dist|.git$|\.\.$|\.$' | xargs rm -r
+          mv dist/ai21-ui/* .
+          rm -r dist
+    - script:
+        name: git push
+        code: |
+          git remote add deploy https://${GIT_USER}:${GIT_PASSWORD}@${GIT_URL}
+          git add .
+          git commit -m "wercker ci release"
+          git push deploy release --force

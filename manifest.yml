@@ -1,0 +1,7 @@
+applications:
+  - name: ai21-ui
+    memory: 32M
+    instances: 1
+    path: dist/
+    buildpacks:
+      - staticfile_buildpack

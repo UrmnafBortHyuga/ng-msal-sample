@@ -1,0 +1,313 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "customer-relationship": [
+        "dist/customer-relationship"
+      ],
+      "customer-relationship/*": [
+        "dist/customer-relationship/*"
+      ],
+      "reservation": [
+        "dist/reservation"
+      ],
+      "reservation/*": [
+        "dist/reservation/*"
+      ],
+      "reception": [
+        "dist/reception"
+      ],
+      "reception/*": [
+        "dist/reception/*"
+      ],
+      "vehicle-estimation": [
+        "dist/vehicle-estimation"
+      ],
+      "vehicle-estimation/*": [
+        "dist/vehicle-estimation/*"
+      ],
+      "goods-estimation": [
+        "dist/goods-estimation"
+      ],
+      "goods-estimation/*": [
+        "dist/goods-estimation/*"
+      ],
+      "after-service-estimation": [
+        "dist/after-service-estimation"
+      ],
+      "after-service-estimation/*": [
+        "dist/after-service-estimation/*"
+      ],
+      "agent-service-estimation": [
+        "dist/agent-service-estimation"
+      ],
+      "agent-service-estimation/*": [
+        "dist/agent-service-estimation/*"
+      ],
+      "internal-membership-estimation": [
+        "dist/internal-membership-estimation"
+      ],
+      "internal-membership-estimation/*": [
+        "dist/internal-membership-estimation/*"
+      ],
+      "external-membership-estimation": [
+        "dist/external-membership-estimation"
+      ],
+      "external-membership-estimation/*": [
+        "dist/external-membership-estimation/*"
+      ],
+      "vehicle-delivery-preparation": [
+        "dist/vehicle-delivery-preparation"
+      ],
+      "vehicle-delivery-preparation/*": [
+        "dist/vehicle-delivery-preparation/*"
+      ],
+      "goods-delivery-preparation": [
+        "dist/goods-delivery-preparation"
+      ],
+      "goods-delivery-preparation/*": [
+        "dist/goods-delivery-preparation/*"
+      ],
+      "after-service-delivery-preparation": [
+        "dist/after-service-delivery-preparation"
+      ],
+      "after-service-delivery-preparation/*": [
+        "dist/after-service-delivery-preparation/*"
+      ],
+      "agent-service-delivery-preparation": [
+        "dist/agent-service-delivery-preparation"
+      ],
+      "agent-service-delivery-preparation/*": [
+        "dist/agent-service-delivery-preparation/*"
+      ],
+      "internal-membership-delivery-preparation": [
+        "dist/internal-membership-delivery-preparation"
+      ],
+      "internal-membership-delivery-preparation/*": [
+        "dist/internal-membership-delivery-preparation/*"
+      ],
+      "external-membership-delivery-preparation": [
+        "dist/external-membership-delivery-preparation"
+      ],
+      "external-membership-delivery-preparation/*": [
+        "dist/external-membership-delivery-preparation/*"
+      ],
+      "accounts-receivable": [
+        "dist/accounts-receivable"
+      ],
+      "accounts-receivable/*": [
+        "dist/accounts-receivable/*"
+      ],
+      "payment-for-accounts-receivable": [
+        "dist/payment-for-accounts-receivable"
+      ],
+      "payment-for-accounts-receivable/*": [
+        "dist/payment-for-accounts-receivable/*"
+      ],
+      "order-acceptance": [
+        "dist/order-acceptance"
+      ],
+      "order-acceptance/*": [
+        "dist/order-acceptance/*"
+      ],
+      "vehicle-order-and-sotckiing": [
+        "dist/vehicle-order-and-sotckiing"
+      ],
+      "vehicle-order-and-sotckiing/*": [
+        "dist/vehicle-order-and-sotckiing/*"
+      ],
+      "u-car-order-and-stocking": [
+        "dist/u-car-order-and-stocking"
+      ],
+      "u-car-order-and-stocking/*": [
+        "dist/u-car-order-and-stocking/*"
+      ],
+      "toyota-parts-distributor-order-and-stocking": [
+        "dist/toyota-parts-distributor-order-and-stocking"
+      ],
+      "toyota-parts-distributor-order-and-stocking/*": [
+        "dist/toyota-parts-distributor-order-and-stocking/*"
+      ],
+      "supplier-order-and-stocking": [
+        "dist/supplier-order-and-stocking"
+      ],
+      "supplier-order-and-stocking/*": [
+        "dist/supplier-order-and-stocking/*"
+      ],
+      "used-item-value-definition": [
+        "dist/used-item-value-definition"
+      ],
+      "used-item-value-definition/*": [
+        "dist/used-item-value-definition/*"
+      ],
+      "inventory": [
+        "dist/inventory"
+      ],
+      "inventory/*": [
+        "dist/inventory/*"
+      ],
+      "agency-procedure": [
+        "dist/agency-procedure"
+      ],
+      "agency-procedure/*": [
+        "dist/agency-procedure/*"
+      ],
+      "vehicle-maintenance": [
+        "dist/vehicle-maintenance"
+      ],
+      "vehicle-maintenance/*": [
+        "dist/vehicle-maintenance/*"
+      ],
+      "approval-workflow": [
+        "dist/approval-workflow"
+      ],
+      "approval-workflow/*": [
+        "dist/approval-workflow/*"
+      ],
+      "product": [
+        "dist/product"
+      ],
+      "product/*": [
+        "dist/product/*"
+      ],
+      "supplier": [
+        "dist/supplier"
+      ],
+      "supplier/*": [
+        "dist/supplier/*"
+      ],
+      "delaer": [
+        "dist/delaer"
+      ],
+      "delaer/*": [
+        "dist/delaer/*"
+      ],
+      "provided-data-import": [
+        "dist/provided-data-import"
+      ],
+      "provided-data-import/*": [
+        "dist/provided-data-import/*"
+      ],
+      "accounting-record": [
+        "dist/accounting-record"
+      ],
+      "accounting-record/*": [
+        "dist/accounting-record/*"
+      ],
+      "state": [
+        "dist/state"
+      ],
+      "state/*": [
+        "dist/state/*"
+      ],
+      "kpi": [
+        "dist/kpi"
+      ],
+      "kpi/*": [
+        "dist/kpi/*"
+      ],
+      "financial": [
+        "dist/financial"
+      ],
+      "financial/*": [
+        "dist/financial/*"
+      ],
+      "hr": [
+        "dist/hr"
+      ],
+      "hr/*": [
+        "dist/hr/*"
+      ],
+      "vehicle-lending": [
+        "dist/vehicle-lending"
+      ],
+      "vehicle-lending/*": [
+        "dist/vehicle-lending/*"
+      ],
+      "notification": [
+        "dist/notification"
+      ],
+      "notification/*": [
+        "dist/notification/*"
+      ],
+      "authentication": [
+        "dist/authentication"
+      ],
+      "authentication/*": [
+        "dist/authentication/*"
+      ],
+      "authorization": [
+        "dist/authorization"
+      ],
+      "authorization/*": [
+        "dist/authorization/*"
+      ],
+      "pdi": [
+        "dist/pdi"
+      ],
+      "pdi/*": [
+        "dist/pdi/*"
+      ],
+      "outsourcing": [
+        "dist/outsourcing"
+      ],
+      "outsourcing/*": [
+        "dist/outsourcing/*"
+      ],
+      "u-car-wholesale": [
+        "dist/u-car-wholesale"
+      ],
+      "u-car-wholesale/*": [
+        "dist/u-car-wholesale/*"
+      ],
+      "used-item": [
+        "dist/used-item"
+      ],
+      "used-item/*": [
+        "dist/used-item/*"
+      ],
+      "delivery": [
+        "dist/delivery"
+      ],
+      "delivery/*": [
+        "dist/delivery/*"
+      ],
+      "sales": [
+        "dist/sales"
+      ],
+      "sales/*": [
+        "dist/sales/*"
+      ],
+      "customer-and-vehicle": [
+        "dist/customer-and-vehicle"
+      ],
+      "customer-and-vehicle/*": [
+        "dist/customer-and-vehicle/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

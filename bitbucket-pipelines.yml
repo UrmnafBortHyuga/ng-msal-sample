@@ -1,0 +1,33 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:10.15.3
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        name: deploy
+        script:
+          - rm .npmrc
+          - mv .npmrc_config .npmrc
+          - npm install
+          - sh ./projects.build.sh
+          - npm run build:prod
+          - git checkout -b release
+          - ls -a | grep -v -E 'dist|.git$|\.\.$|\.$' | xargs rm -r
+          - mv dist/ai21-mockuo/* .
+          - rm -r dist
+          - git add .
+          - git commit -m "release"
+          - git push origin release --force
+          #- cf push
+  branches:
+    release:
+      - step:
+          script:
+            - echo "release"
+

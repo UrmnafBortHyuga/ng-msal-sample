@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+div {
+  display: inline-block;
+  width: calc(100vw - 3rem);
+  vertical-align: top;
+  border-left: 3rem solid #2f3163;
+}

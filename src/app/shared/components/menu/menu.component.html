@@ -1,0 +1,17 @@
+<div [ngClass]="{'background': isOpen}">
+  <div class="menu" [@menuOpen]="isOpen ? 'open' : 'close'">
+    <div class="menu-bar">
+      <aix-icon-button
+        [icons]="isOpen ? 'close' : 'menu'"
+        (click)=click()
+      ></aix-icon-button>
+    </div>
+    <ul class="site-list" *ngIf="isOpen" >
+      <li *ngFor="let row of contents"><i>{{row.domain}}</i>
+        <ul class="site">
+          <li *ngFor="let site of row.sites"><a [routerLink]="row.domainId+'/'+site.id" (click)=click()>{{site.name}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
