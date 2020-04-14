@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './shared/services/auth.service';
 import { Account } from '@azure/msal';
+import { HttpService } from './http.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'tc-root',
@@ -11,7 +13,9 @@ export class AppComponent implements OnInit {
   // TODO デモなので直接みているが、MSALのクラスをここに出さないように変える
   account: Account;
 
-  constructor(private auth: AuthService) {
+  hello: Observable<string>;
+
+  constructor(private auth: AuthService, private http: HttpService) {
   }
 
   ngOnInit(): void {
@@ -19,5 +23,9 @@ export class AppComponent implements OnInit {
       .then(() => {
         this.account = this.auth.account;
       });
+  }
+
+  call() {
+    this.hello = this.http.hello();
   }
 }

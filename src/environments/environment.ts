@@ -8,10 +8,10 @@ export const environment: Environment = {
   production: false,
   salesBackendOrigin: '',
   estimateBackendOrigin: '',
-  clientId: '989d6d04-a59c-4b5e-a221-1a145d1111c1',
-  directoryId: 'f146b14c-8f8a-4bc1-81c7-f1083a35b761',
+  clientId: '0ef16efc-60d7-4179-bc80-c66bdc6241bd',
+  directoryId: 'eeb77ba8-218e-4086-a42a-476e8b7566f9',
   redirectUri: 'http://localhost:4200/',
-  apiEndpoint: 'https://poc-apimanage.jikiai.net/sales-api-proxy'
+  apiEndpoint: 'http://localhost:5000'
 };
 
 /*

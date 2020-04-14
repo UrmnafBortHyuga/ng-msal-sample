@@ -1,7 +1,11 @@
 <tc-menu></tc-menu>
 <div>
   User Name:{{account?.name}}
+  <button (click)="call()">Call</button>
+
+{{hello | async}}
+
   <router-outlet></router-outlet>
 </div>
 
-
+token: {{auth.accessToken}}
